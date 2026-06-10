@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/bagolly.GeoUri/bagolly.GeoUri.csproj" />
+    <Project Path="src/bagolly.GeoUriDemo/bagolly.GeoUriDemo.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/GeoUriTests/GeoUriTests.csproj" />
+  </Folder>
+</Solution>
