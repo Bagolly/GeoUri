@@ -32,7 +32,7 @@ jobs:
       with:
         label: Code Coverage
         color: brightgreen
-        path: GeoUriTests/TestResults/coverage.opencover.xml
+        path: tests/GeoUriTests/TestResults/coverage.opencover.xml
         gist-filename: geouri-code-coverage.json
         gist-id: e9b0ab478bdd0b5cf8840371b574ba16
         gist-auth-token: ${{ secrets.GIST_PERSONAL_ACCESS_TOKEN }}
