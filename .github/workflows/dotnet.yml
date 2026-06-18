@@ -25,4 +25,14 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test --no-build --verbosity normal -p:CollectCoverage=true -p:CoverletOutput=TestResults/ -p:CoverletOutputFormat=opencover
+    - name: Create Test Coverage Badge
+      uses: simon-k/dotnet-code-coverage-badge@v1.0.0
+      id: create_coverage_badge
+      with:
+        label: Code Coverage
+        color: brightgreen
+        path: GeoUriTests/TestResults/coverage.opencover.xml
+        gist-filename: geouri-code-coverage.json
+        gist-id: e9b0ab478bdd0b5cf8840371b574ba16
+        gist-auth-token: ${{ secrets.GIST_PERSONAL_ACCESS_TOKEN }}
