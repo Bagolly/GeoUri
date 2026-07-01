@@ -44,11 +44,11 @@ public readonly struct GeoUri<T> : IEquatable<GeoUri<T>>, ISpanFormattable, IUtf
             ThrowArgOutOfRange(nameof(longitude));
 
         if (altitude.HasValue)
-            if ((T.IsNegative(altitude.Value) && !T.IsZero(altitude.Value)) || T.IsInfinity(altitude.Value) || T.IsNaN(altitude.Value))
+            if ((T.IsNegative(altitude.Value) && !T.IsZero(altitude.Value)) || !T.IsFinite(altitude.Value))
                 ThrowArgOutOfRange(nameof(altitude));
 
         if (uncertainty.HasValue)
-            if ((T.IsNegative(uncertainty.Value) && !T.IsZero(uncertainty.Value)) || T.IsInfinity(uncertainty.Value) || T.IsNaN(uncertainty.Value))
+            if ((T.IsNegative(uncertainty.Value) && !T.IsZero(uncertainty.Value)) || !T.IsFinite(uncertainty.Value))
                 ThrowArgOutOfRange(nameof(uncertainty));
 
         Latitude = latitude;
